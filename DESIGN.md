@@ -358,7 +358,7 @@ We're slightly less concerned about `stenographer`, since it doesn't actually
 process packet information.  It also has a smaller attack surface, especially
 when bound to localhost.  Our major attack vector in `stenographer` is queries
 coming in over TLS.  However, TLS certificate handling is all done with the
-Go standard library (which we trust prett well ;), so our code only ever
+Go standard library (which we trust pretty well ;), so our code only ever
 touches queries that come from a user in the `stenographer` group.  Since we run
 it as user `stenographer`, if someone in the `stenographer` group does achieve a
 shell, they'll be able to... read packets.  The big concern here is that they'll
